@@ -1,2 +1,2 @@
 # KeycloakWebMVCSample
-Keycloak .NET Core 7 SDK - Web MVC
+Keycloak .NET Core 7 SDK - Web MVC application implementation örneği.
