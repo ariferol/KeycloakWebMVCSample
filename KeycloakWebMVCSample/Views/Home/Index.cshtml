@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+<h1>Hoşgeldiniz!</h1>
+
+@if (User.Identity.IsAuthenticated)
+{
+    <p>Kullanıcı uygulamada oturum açmış durumda!</p>
+    <a asp-controller="Home" asp-action="Secure">Diger login olunan güvenli sayfa girişi</a>
+}
+else
+{
+    //<p>You are not logged in. <a href="/Secure">Log in with Keycloak</a></p>
+    <p>
+        Henüz uygulamaya giriş yapmadınız.
+        <a asp-controller="Home" asp-action="Secure">Uygulamaya Giriş</a>
+    </p>
+}

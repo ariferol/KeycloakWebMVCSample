@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Guvenli Sayfa";
+}
+
+<h1>Login olunan güvenli sayfa</h1>
+
+<p>Bu sayfaya sadece login olan kullanıcılar erişebilir.</p>
+
+<p>
+    @if (User.Identity.IsAuthenticated)
+    {
+    <p>Hoş geldiniz sayın :  "@this.User.Identity.Name" .Tebrikler! Uygulamaya başarılı bir şekilde giriş yaptınız.</p>
+    }
+</p>
