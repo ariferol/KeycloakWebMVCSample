@@ -71,6 +71,19 @@ builder.Services.AddAuthentication(options =>
     //context.ProtocolMessage.RedirectUri = "https://localhost:7209/Home";
     //     await Task.FromResult(0);
     //};
+
+    #region Logout redirection
+    /*Logout olduktan sonra specific bir path e uygulama redirect edilmek isteniyorsa SignedOutRedirectUri ve Events.OnSignedOutCallbackRedirect ile birlikte kullanilir */
+    options.SignedOutRedirectUri = "/Home/Index";
+
+    options.Events.OnSignedOutCallbackRedirect += context =>
+    {
+        context.Response.Redirect(context.Options.SignedOutRedirectUri);
+        context.HandleResponse();
+
+        return Task.CompletedTask;
+    };
+    #endregion
 }
 );
 //keycloakconfig - end
